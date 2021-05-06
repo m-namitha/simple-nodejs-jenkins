@@ -11,7 +11,7 @@ node {
     }
   }
   stage('Deploy to Production') {
-    docker.withServer('tcp://production:2376','production') {
+    docker.withServer('tcp://production:2378','production') {
         sh 'docker run -d namitha1111/node-jenkins'
     }
   }
