@@ -1,13 +1,13 @@
 node {
+  checkout scm
   def app
   stage('Build Docker Image') {
-    checkout scm
     app = docker.build('samp/node-jenkins')
   }
   
   samp('Publish to Docker Hub') {
      docker.withRegistry("https://index.docker.io/v1", "dockerhub") {
-          app.push('samp/node-jenkins')
+          app.push()
      }
   }
   stage('Deploy to Production') {
