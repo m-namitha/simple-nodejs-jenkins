@@ -1,13 +1,18 @@
 node {
-  checkout scm
   def app
   stage('Build Docker Image') {
+    checkout scm
     app = docker.build('namitha1111/node-jenkins')
   }
   
+  stage('Publish to Docker Hub') {
+    docker.withRegistry("https://index.docker.io/v1/","dockerhub") {
+      app.push('latest')
+    }
+  }
   stage('Deploy to Production') {
     docker.withServer('tcp://production:2376','production') {
-        sh 'docker run --name node-jenkins -p 80:3000 -d namitha1111/node-jenkins'
+        sh 'docker run -d namitha1111/node-jenkins'
     }
   }
 }                       
