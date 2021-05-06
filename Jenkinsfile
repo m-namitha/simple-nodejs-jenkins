@@ -2,7 +2,7 @@ node {
   def app
   stage('Build Docker Image') {
     checkout scm
-    app = docker.build('docker build -t samp/node-jenkins')
+    app = docker.build('samp/node-jenkins')
   }
   
   samp('Publish to Docker Hub') {
