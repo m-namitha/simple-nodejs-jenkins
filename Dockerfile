@@ -1,9 +1,7 @@
 FROM node:12.18.3
  
-WORKDIR /app
+COPY index.js /app/index.js
 
-RUN npm install
- 
-COPY . .
- 
-CMD [ "node", "index.js" ]
+EXPOSE 80
+
+CMD node /app/index.js
