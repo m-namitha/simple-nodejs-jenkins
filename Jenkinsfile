@@ -1,5 +1,4 @@
-pipelile {
-  agent none 
+node { 
     stages {
       stage('Build Docker Image') {
         agent any
