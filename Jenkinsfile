@@ -1,8 +1,7 @@
 node {
   def app
   stage('Build Docker Image') {
-    checkout scm
-    app = docker.build('namitha1111/node-jenkins')
+    sh 'docker pull namitha1111/node-jenkins'
   }
   
   stage('Deploy to Production') {
