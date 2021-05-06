@@ -1,9 +1,7 @@
 node {
-  
-  stage('Checkout'){
-          checkout scm
-       }
+  def app
   stage('Build Docker Image') {
-    sh "docker build -t namitha1111/node-jenkins ."
+    checkout scm
+    app = docker.build('sample/node-jenkins')
   }
 }                       
