@@ -5,7 +5,7 @@ node {
     app = docker.build('samp/node-jenkins:latest')
   }
   
-  samp('Publish to Docker Hub')
+  samp('Publish to Docker Hub') {
      docker.withRegistry("https://index.docker.io/v1", "dockerhub") {
           app.push('latest')
      }
