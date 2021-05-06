@@ -1,12 +1,12 @@
 pipelile {
   agent none 
     stages {
-      
       stage('Build Docker Image') {
         agent any
         steps {
           sh 'docker build -t namitha1111/node-jenkins .'
         }
+      }
         
       stage('Deploy to Production') {
         agent any
@@ -16,5 +16,4 @@ pipelile {
       }
         
     }
-  
 }                       
