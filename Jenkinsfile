@@ -1,7 +1,5 @@
 node {
-  def app
   stage('Build Docker Image') {
-    checkout scm
-    app = docker.build('samp/node-jenkins')
+    sh "docker build -t namitha1111/node-jenkins ."
   }
 }                       
