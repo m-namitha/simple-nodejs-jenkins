@@ -16,5 +16,3 @@ node {
     }
   }
 }                       
-
-//docker swarm join --token SWMTKN-1-45e3umrmgjoh5dktk3ho3n70a5z49o5gjsxcnog07041xnpd7r-5tsk2xb37etb2w0gwxpewdc7v 10.0.2.15:2377
